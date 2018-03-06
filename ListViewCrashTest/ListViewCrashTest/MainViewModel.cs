@@ -8,6 +8,7 @@ using System.Reactive.Subjects;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using DynamicData;
+using DynamicData.Binding;
 
 namespace ListViewCrashTest
 {
@@ -31,8 +32,9 @@ namespace ListViewCrashTest
 
 			var filteredList = _dataSource.ToObservable()
 				.Filter(searchPredicate)
-				.ObserveOn(Scheduler.Default)
-				.Bind(out _list)
+				.Sort(SortExpressionComparer<Foo>.Ascending(f=>f.Title))
+				.ObserveOn(Xam.Reactive.Concurrency.XamarinDispatcherScheduler.Current)
+				.Bind(Items)
 				.Subscribe();
 
 			LoadCommand.Execute(null);
@@ -45,9 +47,8 @@ namespace ListViewCrashTest
 			await _dataSource.Initialise();
 		}));
 
-		private ReadOnlyObservableCollection<Foo> _list;
-		public ReadOnlyObservableCollection<Foo> Items => _list;
-
+		private ObservableCollectionExtended<Foo> _list = new ObservableCollectionExtended<Foo>();
+		public ObservableCollectionExtended<Foo> Items => _list;
 
 		public bool IsWorking
 		{

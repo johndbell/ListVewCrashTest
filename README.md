@@ -1,6 +1,13 @@
 # ListVewCrashTest
 Demo app for testing a crash in iOS and Android using Xamarin Forms and Dynamic-Data.
 
+UPDATE: Fixed - I was using Scheduler.Default that apparantly doesn't guarantee dispatching to the UI thread, so thanks
+        to Erlend Angelson on the DynamicData Slack channel I used https://github.com/PureWeen/XamarinDispatchScheduler
+	    instead, and the problem goes away.
+
+		So, in conclusion, I wasn't updating the list on the UI thread.
+
+
 The crash currently occurs when you quickly enter something in the search editor. Enter some numbers quickly a few times and the following crash will occur.
 
 iOS StackTrace:

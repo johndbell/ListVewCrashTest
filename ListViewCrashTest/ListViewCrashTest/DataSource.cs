@@ -17,7 +17,7 @@ namespace ListViewCrashTest
 					innerCache.Clear();
 					for (int i = 0; i < count; i++)
 					{
-						innerCache.AddOrUpdate(new Foo { Id = i, Title = $"Foo Number {i:00000}" });
+						innerCache.AddOrUpdate(new Foo { Id = i, Title = $"Foo Number {i:0000}" });
 					}
 				});
 			});

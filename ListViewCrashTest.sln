@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewCrashTest.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewCrashTest.iOS", "ListViewCrashTest\ListViewCrashTest.iOS\ListViewCrashTest.iOS.csproj", "{2D9502DC-F405-4109-A3DF-C9AF3186987D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewCrashTest", "ListViewCrashTest\ListViewCrashTest\ListViewCrashTest.csproj", "{2B0F888D-1CD0-4D7F-8259-9495701572C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListViewCrashTest", "ListViewCrashTest\ListViewCrashTest\ListViewCrashTest.csproj", "{2B0F888D-1CD0-4D7F-8259-9495701572C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FF1A80ED-6A5D-4FA5-9169-30C68BD619B6}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
