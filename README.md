@@ -1,7 +1,7 @@
 # ListVewCrashTest
-Demo app for testing a crash using Xamarin Forms and Dynamic-Data.
+Demo app for testing a crash in iOS using Xamarin Forms and Dynamic-Data.
 
-The crash currently occurs when you quickly enter something in the search editor, say 53434.
+The crash currently occurs when you quickly enter something in the search editor. Enter some numbers quickly a few times and the following crash will occur.
 
 StackTrace:
 
