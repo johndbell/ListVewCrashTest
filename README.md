@@ -1,9 +1,9 @@
 # ListVewCrashTest
-Demo app for testing a crash in iOS using Xamarin Forms and Dynamic-Data.
+Demo app for testing a crash in iOS and Android using Xamarin Forms and Dynamic-Data.
 
 The crash currently occurs when you quickly enter something in the search editor. Enter some numbers quickly a few times and the following crash will occur.
 
-StackTrace:
+iOS StackTrace:
 
 at Xamarin.Forms.ListProxy.get_Item (System.Int32 index) [0x0000b] in D:\agent_work\1\s\Xamarin.Forms.Core\ListProxy.cs:127 
   at Xamarin.Forms.ListProxy.System.Collections.IList.get_Item (System.Int32 index) [0x00000] in D:\agent_work\1\s\Xamarin.Forms.Core\ListProxy.cs:444 
