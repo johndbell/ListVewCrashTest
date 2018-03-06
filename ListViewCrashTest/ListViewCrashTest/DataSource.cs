@@ -7,10 +7,6 @@ namespace ListViewCrashTest
 	public class DataSource
 	{
 		SourceCache<Foo, int> _data = new SourceCache<Foo, int>(t=>t.Id);
-		public DataSource()
-		{
-		
-		}
 
 		public async Task Initialise(int count = 5000)
 		{

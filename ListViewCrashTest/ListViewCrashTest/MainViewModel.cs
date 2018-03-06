@@ -8,7 +8,6 @@ using System.Reactive.Subjects;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using DynamicData;
-using DynamicData.Binding;
 
 namespace ListViewCrashTest
 {
@@ -35,6 +34,8 @@ namespace ListViewCrashTest
 				.ObserveOn(Scheduler.Default)
 				.Bind(out _list)
 				.Subscribe();
+
+			LoadCommand.Execute(null);
 		}
 
 		public ICommand LoadCommand => _loadCommand ?? (_loadCommand = new Xamarin.Forms.Command(async () =>
