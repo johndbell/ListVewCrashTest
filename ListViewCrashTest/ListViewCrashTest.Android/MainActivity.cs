@@ -14,7 +14,11 @@ namespace ListViewCrashTest.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
+
+			AppDomain currentDomain = AppDomain.CurrentDomain;
+			currentDomain.UnhandledException += HandleExceptions;
+
+			TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
@@ -22,6 +26,17 @@ namespace ListViewCrashTest.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
-    }
+
+		private void HandleExceptions(object sender, UnhandledExceptionEventArgs e)
+		{
+			Exception ex = e.ExceptionObject as Exception;
+			if (ex != null)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+				throw ex;
+			}
+			System.Diagnostics.Debugger.Break();
+		}
+	}
 }
 
